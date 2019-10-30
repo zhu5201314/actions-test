@@ -1,0 +1,16 @@
+name: create error
+
+on: pull_request
+
+jobs:
+
+  build:
+
+    name: Hello world action
+
+    runs-on: ubuntu-latest    
+
+    steps:
+
+    - uses: actions/checkout@master
+    - uses: maddox/actions/sleep@master
