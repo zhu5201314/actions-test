@@ -30,5 +30,7 @@ jobs:
         with:
           name: For Test
     
-      - run: cat For Test
-   
+      - run: cat 'For Test'
+      
+      - name: test with dotnet
+        run: dotnet test  
