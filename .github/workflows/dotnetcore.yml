@@ -31,4 +31,5 @@ jobs:
           name: ForTest
       
       - name: test with dotnet
-        run: dotnet test  
+        run: dotnet test
+        working-directory: ./ForTest
