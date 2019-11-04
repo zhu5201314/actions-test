@@ -32,4 +32,4 @@ jobs:
       
       - name: test with dotnet
         run: dotnet test
-        working-directory: ./ForTest
+        working-directory: ./ForTest/ForTest
