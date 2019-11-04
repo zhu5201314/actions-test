@@ -18,7 +18,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: For Test
+        name: ForTest
         path: CoreWebApplication1
    
   test:
@@ -28,9 +28,9 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v1.0.0
         with:
-          name: For Test
+          name: ForTest
     
-      - run: cat 'For Test'
+      - run: cat 'ForTest'
       
       - name: test with dotnet
         run: dotnet test  
