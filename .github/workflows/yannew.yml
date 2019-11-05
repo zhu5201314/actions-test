@@ -3,7 +3,7 @@ on: push
 
 jobs:
   job1:
-    if: contains(github.event.commits[0].message , '[SKIP CI]')
+    if: ! contains(github.event.commits[0].message , '[SKIP CI]') 
     name: Hello world action
     runs-on: ubuntu-latest    
     steps:
