@@ -10,4 +10,5 @@ jobs:
       with:
           repository: Yanjingzhu/YanGitRepo
           token: ${{secrets.GITHUB_TOKEN}}
-    #- uses: maddox/actions/sleep@master
+          ref: master    
+          #- uses: maddox/actions/sleep@master
