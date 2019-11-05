@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Dump GitHub context
       env:
-          GITHUB_COMMIT: ${{  github.event.commits.message }}
+          GITHUB_COMMIT: ${{ toJson(github.event.commits.message) }}
       run: echo "$GITHUB_COMMIT"
     - uses: actions/checkout@master
       with:
