@@ -1,5 +1,5 @@
 name: create error
-on: pull_request
+on: push
 
 jobs:
   job1:
@@ -7,8 +7,7 @@ jobs:
     runs-on: ubuntu-latest    
     steps:
     - uses: actions/checkout@master
-      
-    - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v1.1.0  
-      
+      with:
+          repository: Yanjingzhu/YanGitRepo
+          token: de9393a15a2d70e4e1ad77f713b27c236051aa3d
     #- uses: maddox/actions/sleep@master
