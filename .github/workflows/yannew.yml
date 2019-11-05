@@ -3,6 +3,7 @@ on: push
 
 jobs:
   job1:
+    if: github.event.commits.message == '*"[SKIP CI]"*'
     name: Hello world action
     runs-on: ubuntu-latest    
     steps:
