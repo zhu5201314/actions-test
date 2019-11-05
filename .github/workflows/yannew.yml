@@ -7,6 +7,10 @@ jobs:
     name: Hello world action
     runs-on: ubuntu-latest    
     steps:
+    - name: Dump GitHub context
+      env:
+          GITHUB_COMMIT: ${{  github.event.commits.message }}
+      run: echo "$GITHUB_COMMIT"
     - uses: actions/checkout@master
       with:
           repository: Yanjingzhu/privateone 
