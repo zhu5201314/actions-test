@@ -9,5 +9,5 @@ jobs:
     - uses: actions/checkout@master
       with:
           repository: Yanjingzhu/YanGitRepo
-          token: de9393a15a2d70e4e1ad77f713b27c236051aa3d
+          token: ${{secrets.GITHUB_TOKEN}}
     #- uses: maddox/actions/sleep@master
