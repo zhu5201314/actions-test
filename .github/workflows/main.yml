@@ -1,8 +1,9 @@
 name: main
 
 on:
-  issues: {types: opened}
-
+  issues: 
+    types: [opened]
+    
 jobs:
   comment:
     runs-on: ubuntu-latest
