@@ -1,8 +1,5 @@
-name: create error
-on: 
-  push:
-    branches: 
-      - master
+name: check out other repo
+on: registry_package
 
 jobs:
   job1:
