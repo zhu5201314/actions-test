@@ -9,7 +9,10 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-        with:
-          ref: refs/tags/v1
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+    - uses: actions/checkout@v1
+ 
       
