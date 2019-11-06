@@ -1,5 +1,5 @@
 name: test expressions
-on:   pull_request
+on:   registry_package
 jobs:
   one:
     runs-on: ubuntu-16.04
