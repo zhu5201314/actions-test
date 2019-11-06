@@ -1,6 +1,6 @@
 name: If expression
 
-on: push
+on: registry_package
 
 jobs:
   job1:
