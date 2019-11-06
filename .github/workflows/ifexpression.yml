@@ -11,8 +11,8 @@ jobs:
       run: |
         commit_message=$(git log --format=%B -n 1 ${{ github.sha }})
         echo ::set-output name=commit_message::$commit_message
-   
       shell: bash
+      
     - name: Dump output message
       env:
         COMMIT_MS: ${{ steps.commit_message.outputs.commit_message }}
