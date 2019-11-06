@@ -1,15 +1,15 @@
 name: main
 
 on:
-  pull_request: 
-    types: [edited]
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '25 11,12 * * 3'
     
 jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@0.2.0
+      - uses: actions/checkout@v1
         with:
-          github-token: ${{github.token}}
-          script: |    
-            github.issues.addLabels({...context.issue, labels: ['Triage']})
+          ref: refs/tags/v1
+      
