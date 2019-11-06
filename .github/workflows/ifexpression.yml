@@ -12,6 +12,11 @@ jobs:
         commit_message=$(git log --format=%B -n 1 ${{ github.sha }})
         echo "::set-output name=commit_message::$commit_message"
       shell: bash
+    - name: Dump output message
+      env:
+        COMMIT_MS: ${{ steps.commit_message.outputs.commit_message }}
+      run: echo "$COMMIT_MS" 
+       
     - run: make package-commit_hash-artifacts-for-deploy
       if: startsWith( steps.commit_message.outputs.commit_message, 'Version change') 
       #eeee
