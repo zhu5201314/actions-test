@@ -1,14 +1,21 @@
-name: create error
-on: pull_request
+name: check out other repo
+on: registry_package
 
 jobs:
   job1:
+    if: contains(github.event.commits[0].message,'[SKIP CI]') != true 
     name: Hello world action
     runs-on: ubuntu-latest    
     steps:
+    - name: Dump GitHub context
+      env:
+          GITHUB_COMMIT: ${{ toJson(github.event.commits[0].message) }}
+      run: echo "$GITHUB_COMMIT"
     - uses: actions/checkout@master
-      
-    - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v1.1.0  
-      
-    #- uses: maddox/actions/sleep@master
+      with:
+          repository: Yanjingzhu/privateone 
+          token: ${{secrets.GITHUB_PAT}}
+          ref: master    
+          #- uses: maddox/actions/sleep@master
+          # dddd tt 
+          # ddddxxx
