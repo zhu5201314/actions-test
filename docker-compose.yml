@@ -7,7 +7,7 @@ services:
 
     container_name: backend
 
-    build: ./CoreWebApplication2/CoreWebApplication2/Dockerfile
+    build: ./CoreWebApplication2/CoreWebApplication2/
 
     depends_on:
 
