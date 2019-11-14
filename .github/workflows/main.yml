@@ -1,8 +1,6 @@
 name: main
 
-on: 
-  pull_request:
-    types: [edited] 
+on:  pull_request
     
 jobs:
   comment:
