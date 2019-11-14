@@ -1,0 +1,22 @@
+
+version: "3.7"
+
+services:
+
+  web:
+
+    container_name: backend
+
+    build: ./CoreWebApplication2/CoreWebApplication2/
+
+    depends_on:
+
+      - db
+
+
+
+  db:
+
+    image: postgres
+
+    container_name: postgres
