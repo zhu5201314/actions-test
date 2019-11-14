@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/github-script@0.2.0 
         with: 
-          github-token: ${{github.token}} 
+          github-token: ${{seccrets.GITHUB_PAT}} 
           script: | 
             github.issues.createComment({...context.issue, body: '👋 Thanks for reporting!'})
 
