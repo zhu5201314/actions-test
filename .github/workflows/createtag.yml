@@ -1,8 +1,9 @@
 name: create tag/release
 
 on: 
-  push
-
+  push:
+    branches:
+      - master
 jobs:
 
   job1:
@@ -19,9 +20,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.ADDTAG_PAT }} # This token is provided by Actions, you do not need to create your own token
       with:
-        tag_name: refs/tags/v1.5
+        tag_name: refs/tags/v1.6
 
-        release_name: Release refs/tags/v1.5
+        release_name: Release refs/tags/v1.6
 
         body: |
 
