@@ -1,5 +1,5 @@
 name: test status event
-on: status
+on: push
 
 jobs:
   job1:
@@ -7,6 +7,9 @@ jobs:
     name: Hello world action
     runs-on: ubuntu-latest    
     steps:
+    - name: Shutdown Ubuntu MySQL (SUDO)
+      run: sudo service mysql stop
+      
     - name: Dump GitHub context
       env:
           GITHUB: ${{ toJson(github) }}
