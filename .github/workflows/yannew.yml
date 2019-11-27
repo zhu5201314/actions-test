@@ -1,9 +1,12 @@
 name: check out other repo
-on: registry_package
+on: 
+  push: 
+    tags: 
+      - '*'
 
 jobs:
   job1:
-    if: contains(github.event.commits[0].message,'[SKIP CI]') != true 
+    #if: contains(github.event.commits[0].message,'[SKIP CI]') != true 
     name: Hello world action
     runs-on: ubuntu-latest    
     steps:
@@ -12,10 +15,11 @@ jobs:
           GITHUB_COMMIT: ${{ toJson(github.event.commits[0].message) }}
       run: echo "$GITHUB_COMMIT"
     - uses: actions/checkout@master
-      with:
-          repository: Yanjingzhu/privateone 
-          token: ${{secrets.GITHUB_PAT}}
-          ref: master    
+      #with:
+          #repository: Yanjingzhu/privateone 
+          #token: ${{secrets.GITHUB_PAT}}
+          #ref: master    
+          
           #- uses: maddox/actions/sleep@master
           # dddd tt 
           # ddddxxx
