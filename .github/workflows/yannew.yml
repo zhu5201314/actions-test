@@ -1,8 +1,5 @@
-name: check out other repo
-on: 
-  push: 
-    tags: 
-      - '*'
+name: test status event
+on: status
 
 jobs:
   job1:
