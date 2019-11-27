@@ -1,9 +1,9 @@
 name: create tag/release
 
-on: 
-  push:
-    branches:
-      - master
+on: check_run
+  #push:
+    #branches:
+      #- master
 jobs:
 
   job1:
