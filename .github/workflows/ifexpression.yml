@@ -1,6 +1,6 @@
 name: If expression
 
-on: push
+on: check_run
 
 jobs:
   job1:
