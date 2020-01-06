@@ -1,23 +1,18 @@
-name: reference-context-inside-matrix
+name: Dominaria QA
 
-on: [push]
+on:
+  pull_request:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
-    strategy:
-      matrix:
-        fruit: ['apple', 'banana']
-        workflow: ${{ github.workflow }}
-        
-# workflow: ${{ github.workflow }}
 
     runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: echo Hello, world, ${{ matrix.fruit }}
-    - name: Run a one-line script
-      run: echo Hello, world $workflow
-      env:
-        workflow: ${{tojson(github.workflow) }}
+      run: echo Hello, world
+
